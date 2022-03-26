@@ -10,7 +10,7 @@
         "nodemon": "^2.0.15",
         "telegraf": "^4.7.0"
     },
-    "name": "randomTeamsBot",
+    "name": "teamHelperBot",
     "version": "1.0.0",
     "main": "index.ts",
     "author": "VladimirOlishevsky",
