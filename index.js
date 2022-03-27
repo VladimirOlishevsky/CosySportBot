@@ -6,9 +6,9 @@ import 'dotenv/config'
 let rule = new schedule.RecurrenceRule();
 rule.tz = 'Europe/Samara';
 rule.second = 0;
-rule.minute = 30;
-rule.hour = 20;
-rule.dayOfWeek = 0
+rule.minute = 25;
+rule.hour = 10;
+rule.dayOfWeek = 1
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
