@@ -22,5 +22,7 @@ schedule.scheduleJob(rule, function () { // отложенная рассылк�
 bot.start((ctx) => {
     console.log(ctx.update.message) // информация о id группового чата
 })
-
+bot.on('new_chat_members', (ctx) => {
+    bot.telegram.sendMessage(ctx.message.chat.id, 'Hello')
+})
 bot.launch()
