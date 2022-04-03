@@ -10,13 +10,21 @@ rule.hour = 10;
 rule.dayOfWeek = [2, 3];
 
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.COSY_SPORT_BOT_TOKEN);
 
 schedule.scheduleJob(rule, function () { // отложенная рассылка сообщений
     bot.telegram.sendPoll(process.env.FAMILY_GROUP_ID, 'Футбол', ['+', '-', '+-', '+1', '+2', '+3'], { is_anonymous: false })
 });
 
-bot.start(() => {});
+bot.start((ctx) => {
+    ctx.reply(
+        `Hi ${ctx.update.message.from.first_name} ${ctx.update.message.from.last_name}! \n` + 
+        '\n' +
+        'Этот бот умеет создавать спортивные опросы к назначенному времени \n' + 
+        'По вопросам - @vladimir_olishevsky'
+    );
+});
+
 bot.on('new_chat_members', (ctx) => {
     bot.telegram.sendMessage(
         ctx.message.chat.id, 
@@ -30,6 +38,8 @@ bot.on('new_chat_members', (ctx) => {
 bot.help((ctx) => {
     ctx.reply(
         `Hi ${ctx.update.message.from.first_name} ${ctx.update.message.from.last_name}! \n` + 
+        '\n' +
+        'Этот бот умеет создавать спортивные опросы к назначенному времени \n' + 
         'По вопросам - @vladimir_olishevsky'
     );
 });
