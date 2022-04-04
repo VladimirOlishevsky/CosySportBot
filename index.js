@@ -20,7 +20,7 @@ bot.start((ctx) => {
     ctx.reply(
         `Hi ${ctx.update.message.from.first_name} ${ctx.update.message.from.last_name}! \n` + 
         '\n' +
-        'Этот бот умеет создавать спортивные опросы к назначенному времени \n' + 
+        'Этот бот присылает спортивные опросы к назначенному времени \n' + 
         'По вопросам - @vladimir_olishevsky'
     );
 });
@@ -39,7 +39,7 @@ bot.help((ctx) => {
     ctx.reply(
         `Hi ${ctx.update.message.from.first_name} ${ctx.update.message.from.last_name}! \n` + 
         '\n' +
-        'Этот бот умеет создавать спортивные опросы к назначенному времени \n' + 
+        'Этот бот присылает спортивные опросы к назначенному времени \n' + 
         'По вопросам - @vladimir_olishevsky'
     );
 });
